@@ -201,7 +201,7 @@ weekday
 
 # **Star Schema Architecture**
 
-![star\_schema](architecture/star_schema.png)
+![star\_schema](https://github.com/niranjann16/AWS_Airline_Data_Engineering_Project/blob/main/Architecture/star_schema.png)
 
 This schema improves:
 
