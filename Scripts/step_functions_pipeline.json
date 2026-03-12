@@ -1,0 +1,31 @@
+{
+  "Comment": "Airline ETL Pipeline",
+  "StartAt": "GlueCrawler",
+  "States": {
+    "GlueCrawler": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::glue:startCrawler",
+      "Next": "BronzeToSilver"
+    },
+    "BronzeToSilver": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::glue:startJobRun",
+      "Next": "SilverToGold"
+    },
+    "SilverToGold": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::glue:startJobRun",
+      "Next": "LoadRedshift"
+    },
+    "LoadRedshift": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::redshiftdata:executeStatement",
+      "Next": "SendSNS"
+    },
+    "SendSNS": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::sns:publish",
+      "End": true
+    }
+  }
+}
