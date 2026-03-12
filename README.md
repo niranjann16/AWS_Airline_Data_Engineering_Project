@@ -16,7 +16,7 @@ The project follows the **Medallion Architecture**, where data flows through mul
 2️⃣ **Silver Layer** – Data cleaning & transformation
 3️⃣ **Gold Layer** – Star schema (Fact + Dimension tables) for analytics
 
-![architecture](architecture/airline_architecture.png)
+![architecture](https://github.com/niranjann16/AWS_Airline_Data_Engineering_Project/blob/main/Architecture/Airline%20data%20pipeline%20and%20warehouse%20stages.png)
 
 ---
 
